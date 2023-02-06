@@ -19,8 +19,8 @@ public class BallController : MonoBehaviour
     void Start()
     {
         rg = GetComponent<Rigidbody>();
-        health.text = healthCounter.ToString();
-        time.text = timeCounter.ToString();
+        health.text = "Health: " + healthCounter.ToString();
+        time.text = "Time: " + timeCounter.ToString();
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class BallController : MonoBehaviour
         if (gameContinue && !gameIsDone)
         {
             timeCounter -= Time.deltaTime;
-            time.text = ((int)timeCounter).ToString();
+            time.text = "Time: " + ((int)timeCounter).ToString();
         }
         else if(!gameIsDone)
         {
@@ -72,7 +72,7 @@ public class BallController : MonoBehaviour
         else if( !objectName.Equals("Maze Plane") && !objectName.Equals("Plane"))
         {
             healthCounter--;
-            health.text = healthCounter.ToString();
+            health.text = "Health: " + healthCounter.ToString();
 
             if (healthCounter == 0) gameContinue = false;
         }
